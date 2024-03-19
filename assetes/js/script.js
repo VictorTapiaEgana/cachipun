@@ -13,18 +13,20 @@ function Jugar (){
         var JuCPU = arrayJugadas[Math.floor(Math.random() * arrayJugadas.length)]
 
         if (OPdeJugadas === JuCPU) {       
-            mensaje += (`<strong>Jugada ${x} </strong> <br> Jugador:${OPdeJugadas} - CPU:${JuCPU} - EMPATADA <br>`)
+            mensaje += (`<p class="empate"> <strong>Jugada ${x} </strong> <br> Jugador:${OPdeJugadas} - CPU:${JuCPU} - <span>EMPATADA</span> </p>`)
         } else if (
             (OPdeJugadas === "Tijera" && JuCPU === "Papel") ||
             (OPdeJugadas === "Papel" && JuCPU === "Piedra") ||
             (OPdeJugadas === "Piedra" && JuCPU === "Tijera")
         ) {            
-            mensaje += (`<strong>Jugada ${x} </strong><br> Jugador:${OPdeJugadas} - CPU:${JuCPU} - GANADA 🎉 <br>`)
+            mensaje += (`<p class="azul"> <strong>Jugada ${x} </strong><br> Jugador:${OPdeJugadas} - CPU:${JuCPU} - <span>GANADA 🎉</span></p>`)
 
         } else {           
-            mensaje += (`<strong>Jugada ${x} </strong> <br> Jugador:${OPdeJugadas} - CPU:${JuCPU} - PERDIDA 😥<br>`)
+            mensaje += (`<p class="rojo"> <strong>Jugada ${x} </strong> <br> Jugador:${OPdeJugadas} - CPU:${JuCPU} - <span>PERDIDA 😥</span></p>`)
         }
     }
 
-    document.write (Titulo + mensaje)
+    // document.write (Titulo + mensaje)
+
+    document.getElementById('resultado').innerHTML= Titulo + mensaje;
 }
