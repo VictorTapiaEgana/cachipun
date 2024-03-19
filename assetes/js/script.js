@@ -26,7 +26,5 @@ function Jugar (){
         }
     }
 
-    // document.write (Titulo + mensaje)
-
     document.getElementById('resultado').innerHTML= Titulo + mensaje;
 }
